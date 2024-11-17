@@ -21,8 +21,8 @@ sudo apt install -y python3 python3-pip python3-venv screen nano
 
 # Set up the bot directory and virtual environment
 echo "Setting up bot directory and virtual environment..."
-mkdir -p ~/telegram-bot
-cd ~/telegram-bot
+mkdir -p ~/bloom-bot
+cd ~/bloom-bot
 python3 -m venv venv
 source venv/bin/activate
 
