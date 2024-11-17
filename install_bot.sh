@@ -44,7 +44,7 @@ with open('config.json', 'r') as config_file:
 api_id = config['api_id']
 api_hash = config['api_hash']
 groups = config['groups']
-maestro_bot_id = config['maestro_bot_id']
+bloom_bot_id = config['bloom_bot_id']
 
 sent_addresses_file = 'sent_addresses.json'
 
@@ -72,8 +72,8 @@ async def handler(event):
         for address in contract_addresses:
             if address not in sent_addresses:
                 print(f"New contract address found: {address}, group ID: {sender_id}")
-                await client.send_message(maestro_bot_id, f'New Solana contract address: {address}')
-                print(f"Successfully sent to {maestro_bot_id}: {address}")
+                await client.send_message(bloom_bot_id, f'New Solana contract address: {address}')
+                print(f"Successfully sent to {bloom_bot_id}: {address}")
                 sent_addresses.append(address)
                 new_addresses.append(address)
             else:
@@ -95,7 +95,7 @@ cat << 'EOF' > config.json
     "api_id": "YOUR_API_ID",
     "api_hash": "YOUR_API_HASH",
     "groups": [123456789, 987654321],
-    "maestro_bot_id": "@maestro"
+    "bloom_bot_id": "@BloomSolanaEU2_bot"
 }
 EOF
 
